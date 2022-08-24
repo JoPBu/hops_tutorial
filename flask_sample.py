@@ -19,15 +19,18 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
     icon = os.path.join(dir_path, "recources\\icon_add.png"),
     inputs=[
         hs.HopsNumber("A", "A", "First number"),
-        hs.HopsNumber("B", "B", "Second number"),
-        #hs.HopsNumber("B", "B", "Second number", hs.HopsParamAccess.LIST),
+        #hs.HopsNumber("B", "B", "Second number"),
+        hs.HopsNumber("B", "B", "Second number", hs.HopsParamAccess.LIST),
     ],
     outputs=[hs.HopsNumber("Sum", "S", "A + B")]
 )
 
 # Programm 1
 def add(a: float, b: float):
-    return a + b
+    list = []
+    for i in b:
+        list.append(a+i)
+    return list
 
 # Component 2
 @hops.component(

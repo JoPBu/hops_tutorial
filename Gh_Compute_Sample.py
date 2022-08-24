@@ -17,7 +17,7 @@ rcutil.url = compute_url
 rcutil.authToken = "" # no auth token required as it is a local service
 
 # Test the compute server connection, should return version object
-print("T")
+
 try: 
     version_test = requests.get(compute_url + '/version')
     print("[INFO] Compute server connection established")
